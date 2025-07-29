@@ -84,16 +84,18 @@
         }
         .download-btn {
             background: #222;
-            color: white;
-            padding: 8px 16px;
+            color: white !important;
+            padding: 12px 24px;
             border-radius: 6px;
             text-decoration: none;
             font-size: 1.15rem;
             font-weight: 500;
             transition: background-color 0.2s;
+            display: inline-block;
         }
         .download-btn:hover {
             background: #333;
+            color: white !important;
         }
         .main-content {
             max-width: 1200px;
@@ -210,8 +212,8 @@
         }
         
         .footer-logo {
-            width: 48px;
-            height: 48px;
+            width: 56px;
+            height: 56px;
             border-radius: 12px;
         }
         
@@ -230,13 +232,12 @@
             opacity: 0.7;
         }
         
-        .footer-copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
+        .footer-center {
+            display: flex;
+            align-items: center;
         }
         
-        .footer-copyright p {
+        .footer-center p {
             font-size: 0.9rem;
             color: #999;
             margin: 0;
@@ -299,7 +300,8 @@
             }
             .download-btn {
                 font-size: 1rem;
-                padding: 6px 12px;
+                padding: 8px 16px;
+                color: white !important;
             }
             
             /* Hero Section Mobile Styles */
@@ -356,11 +358,17 @@
             }
             
             .footer-logo {
-                width: 40px;
-                height: 40px;
+                width: 48px;
+                height: 48px;
             }
             
-            .footer-copyright p {
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .footer-center p {
                 font-size: 0.8rem;
             }
             
@@ -379,8 +387,7 @@
             <span class="brand-name">BodyAccess</span>
         </div>
         <nav class="nav">
-            <a href="index.html">Home</a>
-            <a href="privacy.html" class="active">Privacy Policy</a>
+            <a href="privacy.html" class="active privacy-button">Privacy Policy</a>
             <a href="#" class="download-btn">Download</a>
         </nav>
     </header>
@@ -808,6 +815,9 @@
             <div class="footer-left">
                 <img src="iOS app logo.svg" alt="BodyAccess Logo" class="footer-logo">
             </div>
+            <div class="footer-center">
+                <p>© 2025 Fugazi Studios LLC. All rights reserved.</p>
+            </div>
             <div class="footer-right">
                 <a href="https://instagram.com/your-app-account" target="_blank" class="instagram-link">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -815,9 +825,6 @@
                     </svg>
                 </a>
             </div>
-        </div>
-        <div class="footer-copyright">
-            <p>© 2025 Fugazi Studios LLC. All rights reserved.</p>
         </div>
     </footer>
     <script>

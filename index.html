@@ -70,10 +70,10 @@
         .nav {
             display: flex;
             gap: 32px;
-            align-items: center;
+            align-items: baseline;
         }
         .nav a {
-            font-size: 1.15rem;
+            font-size: 1rem;
             color: #333;
             text-decoration: none;
             font-weight: 500;
@@ -135,6 +135,7 @@
             display: inline-block;
             transition: opacity 0.2s;
             background: transparent;
+            border-bottom: none !important;
         }
         
         .app-store-btn img {
@@ -144,6 +145,7 @@
         
         .app-store-btn:hover {
             opacity: 0.8;
+            border-bottom: none !important;
         }
         
         .hero-screenshots {
@@ -294,7 +296,7 @@
         @media (max-width: 600px) {
             .header {
                 flex-direction: row;
-                align-items: center;
+                align-items: baseline;
                 padding: 20px 16px 0 16px;
             }
             .main-content {

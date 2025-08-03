@@ -89,28 +89,7 @@
             color: #333;
             border-bottom: 2px solid #222;
         }
-        .download-btn {
-            background: #000;
-            color: white !important;
-            padding: 18px 36px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            border: 2px solid #000;
-            position: relative;
-            overflow: hidden;
-        }
-        .download-btn:hover {
-            background: #333;
-            color: white !important;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        }
+
         .main-content {
             max-width: 1200px;
             margin: 100px auto 0 auto;
@@ -154,15 +133,17 @@
         
         .app-store-btn {
             display: inline-block;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            border-radius: 8px;
+            transition: opacity 0.2s;
+            background: transparent;
+        }
+        
+        .app-store-btn img {
+            background: transparent;
+            border-radius: 6px;
         }
         
         .app-store-btn:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+            opacity: 0.8;
         }
         
         .hero-screenshots {
@@ -312,28 +293,21 @@
         }
         @media (max-width: 600px) {
             .header {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 24px 12px 0 12px;
+                flex-direction: row;
+                align-items: center;
+                padding: 20px 16px 0 16px;
             }
             .main-content {
                 margin-top: 32px;
                 padding: 0 16px 32px 16px;
             }
             .brand-name {
-                font-size: 1.6rem;
-            }
-            .brand {
-                margin-bottom: 16px;
+                font-size: 1.4rem;
             }
             .nav {
-                gap: 18px;
+                gap: 12px;
             }
-            .download-btn {
-                font-size: 1rem;
-                padding: 16px 32px;
-                color: white !important;
-            }
+
             
             /* Hero Section Mobile Styles */
             .hero-section {
@@ -355,27 +329,27 @@
             }
             
             .hero-screenshots {
-                flex-direction: column;
-                gap: 30px;
+                flex-direction: row;
+                gap: 15px;
             }
             
             .screenshot.left,
-            .screenshot.right,
-            .screenshot.center {
-                width: 280px;
+            .screenshot.right {
+                width: 80px;
                 transform: none;
             }
             
             .screenshot.center {
-                transform: none;
+                width: 100px;
+                transform: scale(1.1);
             }
             
             .screenshot:hover {
-                transform: translateY(-5px);
+                transform: translateY(-2px);
             }
             
             .screenshot.center:hover {
-                transform: translateY(-5px);
+                transform: scale(1.1) translateY(-2px);
             }
             
             /* Footer Mobile Styles */
@@ -389,18 +363,18 @@
             }
             
             .footer-logo {
-                width: 48px;
-                height: 48px;
+                width: 32px;
+                height: 32px;
             }
             
             .footer-content {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
+                flex-direction: row;
+                gap: 12px;
+                text-align: left;
             }
             
             .footer-center p {
-                font-size: 0.8rem;
+                font-size: 0.7rem;
             }
             
             .main-content h1 {
@@ -420,7 +394,9 @@
         <nav class="nav">
             <a href="privacy.html">Privacy Policy</a>
             <a href="terms.html">Terms of Service</a>
-            <a href="#" class="download-btn">Download</a>
+            <a href="#" class="app-store-btn">
+                <img src="app-store-badge.svg" alt="Download on the App Store" width="140" height="42">
+            </a>
         </nav>
     </header>
     <main class="main-content">

@@ -70,14 +70,14 @@
         .nav {
             display: flex;
             gap: 32px;
-            align-items: baseline;
+            align-items: center;
         }
         .nav a {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #333;
             text-decoration: none;
             font-weight: 500;
-            padding: 6px 0;
+            padding: 8px 0;
             border-bottom: 2px solid transparent;
             transition: border-color 0.2s, color 0.2s;
         }
@@ -92,7 +92,7 @@
 
         .main-content {
             max-width: 1200px;
-            margin: 100px auto 0 auto;
+            margin: 120px auto 0 auto;
             padding: 0 24px 40px 24px;
         }
         
@@ -111,7 +111,7 @@
         }
         
         .hero-title {
-            font-size: 3.5rem;
+            font-size: 2.2rem;
             font-weight: 800;
             margin-bottom: 24px;
             color: #222;
@@ -132,7 +132,6 @@
         
         .app-store-btn {
             display: inline-block;
-            transition: opacity 0.2s;
             background: transparent;
             border-bottom: none !important;
         }
@@ -140,11 +139,6 @@
         .app-store-btn img {
             background: transparent;
             border-radius: 6px;
-        }
-        
-        .app-store-btn:hover {
-            opacity: 0.8;
-            border-bottom: none !important;
         }
         
         .hero-screenshots {
@@ -191,6 +185,36 @@
         .privacy-section {
             max-width: 800px;
             margin: 0 auto;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .privacy-section.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .main-content h1 {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .main-content h1.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .main-content .last-updated {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .main-content .last-updated.fade-in {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         /* Footer Styles */
@@ -298,7 +322,7 @@
             }
             
             .nav a {
-                font-size: 0.9rem;
+                font-size: 1rem;
             }
             
             .nav .app-store-btn {
@@ -316,7 +340,7 @@
             }
             
             .hero-title {
-                font-size: 2.5rem;
+                font-size: 1.8rem;
                 margin-bottom: 20px;
             }
             
@@ -375,7 +399,7 @@
             }
             
             .main-content h1 {
-                font-size: 2.1rem;
+                font-size: 1.8rem;
             }
             .main-content .last-updated {
                 font-size: 1rem;
@@ -399,9 +423,10 @@
     <main class="main-content">
 
         <h1>Privacy Policy</h1>
-        <div class="last-updated">Last updated June 3, 2025</div>
+        <div class="last-updated">Last updated July 30, 2025</div>
 
-        <p>This Privacy Notice for Fugazi Studios LLC ("we," "us," or "our"), describes how and why we might access, collect, store, use, and/or share ("process") your personal information when you use our services ("Services"), including when you:</p>
+        <div class="privacy-section">
+            <p>This Privacy Notice for Fugazi Studios LLC ("we," "us," or "our"), describes how and why we might access, collect, store, use, and/or share ("process") your personal information when you use our services ("Services"), including when you:</p>
 
         <ul>
             <li>Download and use our mobile application (BodyAccess), or any other application of ours that links to this Privacy Notice</li>
@@ -812,6 +837,7 @@
 
         <h2>14. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?</h2>
         <p>You have the right to request access to the personal information we collect from you, change that information, or delete it. To request to review, update, or delete your personal information, please email: <a href="mailto:support@bodyaccess.app">support@bodyaccess.app</a>.</p>
+        </div>
     </main>
     
     <!-- Footer -->
@@ -824,14 +850,15 @@
                 <p>© 2025 Fugazi Studios LLC. All rights reserved.</p>
             </div>
             <div class="footer-right">
-                <a href="https://instagram.com/your-app-account" target="_blank" class="instagram-link">
+                <a href="https://www.instagram.com/bodyaccess.app" target="_blank" class="instagram-link">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="#333"/>
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="#999"/>
                     </svg>
                 </a>
             </div>
         </div>
     </footer>
+    
     <script>
         // Add smooth scrolling to all links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -855,6 +882,45 @@
                 top: 0,
                 behavior: 'smooth'
             });
+        });
+    </script>
+    <script>
+        // Fade-in animation for main content
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Privacy page loaded, starting fade-in animations...');
+            
+            // Wait a brief moment then fade in all elements with staggered timing
+            setTimeout(() => {
+                const mainTitle = document.querySelector('.main-content h1');
+                const lastUpdated = document.querySelector('.main-content .last-updated');
+                const privacySection = document.querySelector('.privacy-section');
+                
+                console.log('Elements found:', { mainTitle, lastUpdated, privacySection });
+                
+                // Fade in the main title first
+                if (mainTitle) {
+                    mainTitle.classList.add('fade-in');
+                    console.log('Main title faded in');
+                }
+                
+                // Fade in the last updated date
+                if (lastUpdated) {
+                    setTimeout(() => {
+                        lastUpdated.classList.add('fade-in');
+                        console.log('Last updated faded in');
+                    }, 200);
+                }
+                
+                // Fade in the privacy content
+                if (privacySection) {
+                    setTimeout(() => {
+                        privacySection.classList.add('fade-in');
+                        console.log('Privacy section faded in');
+                    }, 400);
+                }
+                
+                console.log('All animations started');
+            }, 300); // Start animation after 300ms
         });
     </script>
 </body>

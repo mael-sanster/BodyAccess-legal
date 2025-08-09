@@ -70,14 +70,14 @@
         .nav {
             display: flex;
             gap: 32px;
-            align-items: baseline;
+            align-items: center;
         }
         .nav a {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #333;
             text-decoration: none;
             font-weight: 500;
-            padding: 6px 0;
+            padding: 8px 0;
             border-bottom: 2px solid transparent;
             transition: border-color 0.2s, color 0.2s;
         }
@@ -129,11 +129,18 @@
         
         .download-app-store {
             margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .download-app-store.fade-in {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .app-store-btn {
             display: inline-block;
-            transition: opacity 0.2s;
             background: transparent;
             border-bottom: none !important;
         }
@@ -141,11 +148,6 @@
         .app-store-btn img {
             background: transparent;
             border-radius: 6px;
-        }
-        
-        .app-store-btn:hover {
-            opacity: 0.8;
-            border-bottom: none !important;
         }
         
         .hero-screenshots {
@@ -160,6 +162,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .screenshot-container.fade-in {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .screenshot {
@@ -258,7 +268,7 @@
             font-weight: 400;
         }
         .main-content h1 {
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             font-weight: 800;
             margin-bottom: 18px;
             color: #222;
@@ -311,7 +321,7 @@
             }
             
             .nav a {
-                font-size: 0.9rem;
+                font-size: 1rem;
             }
             
             .nav .app-store-btn {
@@ -329,7 +339,7 @@
             }
             
             .hero-title {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
                 margin-bottom: 20px;
             }
             
@@ -388,7 +398,7 @@
             }
             
             .main-content h1 {
-                font-size: 2.1rem;
+                font-size: 1.8rem;
             }
             .main-content .last-updated {
                 font-size: 1rem;
@@ -470,15 +480,35 @@
             });
         });
 
-        // Add smooth scrolling to the privacy policy button
-        document.querySelector('.privacy-button').addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        // Immediate fade-in animation for screenshots and app store logo
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, starting fade-in animations...');
+            
+            // Wait a brief moment then fade in all elements with staggered timing
+            setTimeout(() => {
+                const downloadSection = document.querySelector('.download-app-store');
+                const screenshotContainers = document.querySelectorAll('.screenshot-container');
+                
+                console.log('Download section found:', downloadSection);
+                console.log('Screenshot containers found:', screenshotContainers.length);
+                
+                // Fade in the download section first
+                if (downloadSection) {
+                    downloadSection.classList.add('fade-in');
+                    console.log('Download section faded in');
+                }
+                
+                // Fade in screenshot containers with staggered timing
+                screenshotContainers.forEach((container, index) => {
+                    setTimeout(() => {
+                        container.classList.add('fade-in');
+                        console.log(`Screenshot container ${index + 1} faded in`);
+                    }, 200 + (index * 150)); // Stagger by 150ms each
+                });
+                
+                console.log('All animations started');
+            }, 300); // Start animation after 300ms
         });
-
 
     </script>
 </body>

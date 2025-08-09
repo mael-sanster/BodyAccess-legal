@@ -70,14 +70,14 @@
         .nav {
             display: flex;
             gap: 32px;
-            align-items: baseline;
+            align-items: center;
         }
         .nav a {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #333;
             text-decoration: none;
             font-weight: 500;
-            padding: 6px 0;
+            padding: 8px 0;
             border-bottom: 2px solid transparent;
             transition: border-color 0.2s, color 0.2s;
         }
@@ -92,7 +92,7 @@
 
         .main-content {
             max-width: 1200px;
-            margin: 100px auto 0 auto;
+            margin: 120px auto 0 auto;
             padding: 0 24px 40px 24px;
         }
         
@@ -111,7 +111,7 @@
         }
         
         .hero-title {
-            font-size: 3.5rem;
+            font-size: 2.2rem;
             font-weight: 800;
             margin-bottom: 24px;
             color: #222;
@@ -132,7 +132,6 @@
         
         .app-store-btn {
             display: inline-block;
-            transition: opacity 0.2s;
             background: transparent;
             border-bottom: none !important;
         }
@@ -140,11 +139,6 @@
         .app-store-btn img {
             background: transparent;
             border-radius: 6px;
-        }
-        
-        .app-store-btn:hover {
-            opacity: 0.8;
-            border-bottom: none !important;
         }
         
         .hero-screenshots {
@@ -191,6 +185,36 @@
         .terms-section {
             max-width: 800px;
             margin: 0 auto;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .terms-section.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .main-content h1 {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .main-content h1.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .main-content .last-updated {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .main-content .last-updated.fade-in {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         /* Footer Styles */
@@ -298,7 +322,7 @@
             }
             
             .nav a {
-                font-size: 0.9rem;
+                font-size: 1rem;
             }
             
             .nav .app-store-btn {
@@ -316,7 +340,7 @@
             }
             
             .hero-title {
-                font-size: 2.5rem;
+                font-size: 1.8rem;
                 margin-bottom: 20px;
             }
             
@@ -375,7 +399,7 @@
             }
             
             .main-content h1 {
-                font-size: 2.1rem;
+                font-size: 1.8rem;
             }
             .main-content .last-updated {
                 font-size: 1rem;
@@ -401,7 +425,8 @@
         <h1>Terms of Service</h1>
         <div class="last-updated">Last updated July 30, 2025</div>
 
-        <p>We are Fugazi Studios LLC ("Company," "we," "us," "our").</p>
+        <div class="terms-section">
+            <p>We are Fugazi Studios LLC ("Company," "we," "us," "our").</p>
 
         <p>We operate the BodyAccess mobile application and related products and services that refer or link to these Legal Terms (collectively, the 'Services').</p>
 
@@ -568,6 +593,7 @@
 
         <h2>20. CONTACT US</h2>
         <p>In order to resolve a complaint regarding the Services or to receive further information regarding use of the Services, please contact us at <a href="mailto:support@bodyaccess.app">support@bodyaccess.app</a>.</p>
+        </div>
 
     </main>
     
@@ -614,6 +640,43 @@
             });
         });
 
+        // Fade-in animation for main content
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Terms page loaded, starting fade-in animations...');
+            
+            // Wait a brief moment then fade in all elements with staggered timing
+            setTimeout(() => {
+                const mainTitle = document.querySelector('.main-content h1');
+                const lastUpdated = document.querySelector('.main-content .last-updated');
+                const termsSection = document.querySelector('.terms-section');
+                
+                console.log('Elements found:', { mainTitle, lastUpdated, termsSection });
+                
+                // Fade in the main title first
+                if (mainTitle) {
+                    mainTitle.classList.add('fade-in');
+                    console.log('Main title faded in');
+                }
+                
+                // Fade in the last updated date
+                if (lastUpdated) {
+                    setTimeout(() => {
+                        lastUpdated.classList.add('fade-in');
+                        console.log('Last updated faded in');
+                    }, 200);
+                }
+                
+                // Fade in the terms content
+                if (termsSection) {
+                    setTimeout(() => {
+                        termsSection.classList.add('fade-in');
+                        console.log('Terms section faded in');
+                    }, 400);
+                }
+                
+                console.log('All animations started');
+            }, 300); // Start animation after 300ms
+        });
 
     </script>
 </body>

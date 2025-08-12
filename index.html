@@ -173,8 +173,7 @@
         }
         
         .screenshot {
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            filter: drop-shadow(8px 8px 16px rgba(0, 0, 0, 0.2));
             transition: transform 0.3s ease;
         }
         
@@ -182,11 +181,13 @@
         .screenshot.right {
             width: 200px;
             height: auto;
+            max-height: 400px;
         }
         
         .screenshot.center {
             width: 240px;
             height: auto;
+            max-height: 480px;
             transform: scale(1.1);
         }
         
@@ -364,11 +365,15 @@
             .screenshot.left,
             .screenshot.right {
                 width: 80px;
+                height: auto;
+                max-height: 160px;
                 transform: none;
             }
             
             .screenshot.center {
                 width: 100px;
+                height: auto;
+                max-height: 200px;
                 transform: scale(1.1);
             }
             

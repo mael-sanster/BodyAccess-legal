@@ -181,6 +181,7 @@
             object-fit: cover;
         }
         
+        
         .screenshot.left,
         .screenshot.right {
             width: 200px;
@@ -440,7 +441,7 @@
         <nav class="nav">
             <a href="privacy.html">Privacy Policy</a>
             <a href="terms.html">Terms of Service</a>
-            <a href="#" class="app-store-btn">
+            <a href="https://apps.apple.com/us/app/bodyaccess/id6746161609" target="_blank" rel="noopener" class="app-store-btn">
                 <img src="app-store-badge.svg" alt="Download on the App Store" width="140" height="42">
             </a>
         </nav>
@@ -452,7 +453,7 @@
                 <h1 class="hero-title">Stretching Made Simple</h1>
                 <p class="hero-subtitle">Empowering everyone to stretch smarter with an interactive body map that makes it intuitive and easy to use.</p>
                 <div class="download-app-store">
-                    <a href="#" class="app-store-btn">
+                    <a href="https://apps.apple.com/us/app/bodyaccess/id6746161609" target="_blank" rel="noopener" class="app-store-btn">
                         <img src="app-store-badge.svg" alt="Download on the App Store" width="140" height="42">
                     </a>
                 </div>
@@ -529,12 +530,14 @@
                     setTimeout(() => {
                         container.classList.add('fade-in');
                         console.log(`Screenshot container ${index + 1} faded in`);
-                    }, 200); // All fade in at the same time
+                    }, 200);
                 });
                 
                 console.log('All animations started');
             }, 300); // Start animation after 300ms
         });
+
+        // No carousel logic
 
     </script>
 </body>
